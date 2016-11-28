@@ -1,0 +1,3 @@
+/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles/Testcompiler.dir

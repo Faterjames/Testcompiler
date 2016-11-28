@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/Testcompiler.dir/mycompiler.c.o CMakeFiles/Testcompiler.dir/lex.c.o  -o Testcompiler 
