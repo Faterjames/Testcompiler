@@ -3,6 +3,7 @@
 //
 #include "lex.h"
 #include <stdio.h>
+
 #include <stdlib.h>
 
 
@@ -11,15 +12,24 @@ char getch(FILE *f){
     return ch;
 }
 
-void equal_symbol(char ch){
+/*void equal_symbol(char ch){
 
-}
-void compare(char *a){
-
+}*/
+char* int_compare(FILE *f){
+    char name[100];
+    __int16_t i = 0;
+    char ch;
+    while((ch = getch(f)) != ' ');
+    while((ch != ' ') && (ch != ';')){
+     if(ch == '='); //equal_compare
+     name[i] = ch;
+     ch = getch(f);
+    }
+    return name;
 }
 void letter_compare(char ch,FILE *f){
     switch (ch){
-        case 'a' :
+       /* case 'a' :
             if(getch(f) == 'u')
                 if(getch(f) == 't')
                     if(getch(f) == 'o');
@@ -78,28 +88,29 @@ void letter_compare(char ch,FILE *f){
                     if (getch(f) == 'o');
                         //goto_compare
             else //variate_compare
-            break;
+            break;*/
         case 'i':
             if (getch(f) == 'n')
-                if(getch(f) == 't');
-                    //int_compare;
+                if(getch(f) == 't') {
+                    int_compare(f);
+                }
             else //variate_compare
             break;
     }
 }
-void lex_node(char ch){
-    switch (ch){
+void lex_node(char ch,FILE *f) {
+    switch (ch) {
         case '=':
-            equal_symbol(ch);
+            //equal_symbol(ch);
             break;
         case ';':
             break;
         case ' ':
             break;
         default:
-            if(('a'<ch) || (ch < 'Z')){
-             // letter_compare(ch);
+            if (('a' < ch) || (ch < 'Z')) {
+                letter_compare(ch, f);
             }
-
     }
 }
+

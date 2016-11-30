@@ -8,7 +8,7 @@
 #define TESTCOMPILER_LEX_H
 
 char getch(FILE* f);
-void lex_node(char ch);
-
+void lex_node(char ch,FILE *f);
+char* int_compare(FILE* f);
 
 #endif //TESTCOMPILER_LEX_H
