@@ -11,10 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59cea96c-4d82-4248-adb4-a712d06392ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lex.c" afterPath="$PROJECT_DIR$/lex.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lex.h" afterPath="$PROJECT_DIR$/lex.h" />
-    </list>
+    <list default="true" id="59cea96c-4d82-4248-adb4-a712d06392ba" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +53,8 @@
       <file leaf-file-name="lex.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lex.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="100" column="31" lean-forward="false" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
+            <state relative-caret-position="354">
+              <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
               <folding>
                 <element signature="e#40#56#0" expanded="true" />
               </folding>
@@ -96,8 +93,8 @@
         <option value="$PROJECT_DIR$/test.c" />
         <option value="$PROJECT_DIR$/mycompiler.c" />
         <option value="$PROJECT_DIR$/node_type.h" />
-        <option value="$PROJECT_DIR$/lex.c" />
         <option value="$PROJECT_DIR$/lex.h" />
+        <option value="$PROJECT_DIR$/lex.c" />
       </list>
     </option>
   </component>
@@ -346,12 +343,12 @@
       <workItem from="1480347104342" duration="2335000" />
       <workItem from="1480400750735" duration="3640000" />
       <workItem from="1480416652089" duration="4083000" />
-      <workItem from="1480520284823" duration="2171000" />
+      <workItem from="1480520284823" duration="2242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12797000" />
+    <option name="totallyTimeSpent" value="12868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="451" y="47" width="1403" height="997" extended-state="0" />
@@ -604,8 +601,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lex.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="100" column="31" lean-forward="false" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
+        <state relative-caret-position="354">
+          <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
           <folding>
             <element signature="e#40#56#0" expanded="true" />
           </folding>

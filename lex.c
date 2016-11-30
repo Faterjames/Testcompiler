@@ -103,7 +103,7 @@ void lex_node(char ch,FILE *f) {
         case '=':
             //equal_symbol(ch);
             break;
-        case ';':
+        case ';': 
             break;
         case ' ':
             break;
