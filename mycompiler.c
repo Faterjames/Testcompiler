@@ -1,20 +1,18 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-
-
-void 
-
-
-void lex_node();
-
-
-void lex();
-
-
+#include "lex.h"
+#include "node_type.h"
 
 
 
 int main(){
+    FILE *fp;
+    if((fp = fopen("/home/ubuntu/programmes/AST_test/test.c","rb")) == NULL){
+        printf("error to open file\n");
+        exit(1);
+    }
+    char ch;
+    while((ch = getch(fp)) != EOF) putchar(ch);
 	return 0;
 }

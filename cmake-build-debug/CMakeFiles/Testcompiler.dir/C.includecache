@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/programmes/Testcompiler/lex.c
+lex.h
+/home/ubuntu/programmes/Testcompiler/lex.h
+stdio.h
+-
+stdlib.h
+-
+
+/home/ubuntu/programmes/Testcompiler/lex.h
+stdio.h
+-
+
+/home/ubuntu/programmes/Testcompiler/mycompiler.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+lex.h
+/home/ubuntu/programmes/Testcompiler/lex.h
+
