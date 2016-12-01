@@ -15,16 +15,21 @@ char getch(FILE *f){
 /*void equal_symbol(char ch){
 
 }*/
+void brace_(){
+
+}
 char* int_compare(FILE *f){
     char name[100];
-    __int16_t i = 0;
+    int i = 0;
     char ch;
-    while((ch = getch(f)) != ' ');
+    while((ch = getch(f)) == ' ');
     while((ch != ' ') && (ch != ';')){
      if(ch == '='); //equal_compare
      name[i] = ch;
      ch = getch(f);
+     i++;
     }
+    printf("%s",name);
     return name;
 }
 void letter_compare(char ch,FILE *f){
@@ -92,6 +97,7 @@ void letter_compare(char ch,FILE *f){
         case 'i':
             if (getch(f) == 'n')
                 if(getch(f) == 't') {
+                    printf("intcompare");
                     int_compare(f);
                 }
             else //variate_compare
@@ -103,12 +109,13 @@ void lex_node(char ch,FILE *f) {
         case '=':
             //equal_symbol(ch);
             break;
-        case ';': 
+        case ';':
             break;
         case ' ':
             break;
         default:
             if (('a' < ch) || (ch < 'Z')) {
+               // printf("lettercompare");
                 letter_compare(ch, f);
             }
     }

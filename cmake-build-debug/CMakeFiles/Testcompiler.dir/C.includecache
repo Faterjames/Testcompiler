@@ -27,4 +27,8 @@ stdlib.h
 -
 lex.h
 /home/ubuntu/programmes/Testcompiler/lex.h
+node_type.h
+/home/ubuntu/programmes/Testcompiler/node_type.h
+
+/home/ubuntu/programmes/Testcompiler/node_type.h
 

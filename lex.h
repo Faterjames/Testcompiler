@@ -10,5 +10,5 @@
 char getch(FILE* f);
 void lex_node(char ch,FILE *f);
 char* int_compare(FILE* f);
-
+void func_compare();
 #endif //TESTCOMPILER_LEX_H

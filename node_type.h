@@ -43,7 +43,5 @@ enum y_def{
 };
 //stack node define
 
-struct {
-      
-};
+
 #endif //TESTCOMPILER_NODE_TYPE_H
