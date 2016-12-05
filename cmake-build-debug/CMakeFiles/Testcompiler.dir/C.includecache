@@ -13,6 +13,8 @@ stdio.h
 -
 stdlib.h
 -
+string.h
+-
 
 /home/ubuntu/programmes/Testcompiler/lex.h
 stdio.h

@@ -96,6 +96,9 @@
 		<Unit filename="/home/ubuntu/programmes/Testcompiler/node_type.h">
 			<Option target="Testcompiler"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/programmes/Testcompiler/using_struct.h">
+			<Option target="Testcompiler"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/programmes/Testcompiler/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 #include <stdlib.h>
+#include <string.h>
 
 
 char getch(FILE *f){
@@ -15,22 +16,31 @@ char getch(FILE *f){
 /*void equal_symbol(char ch){
 
 }*/
-void brace_(){
-
+void brace_(FILE *f){
+    char ch = getch(f);
+    while (ch != '}'){
+        lex_node(ch,f);
+        ch = getch(f);
+    }
 }
-char* int_compare(FILE *f){
-    char name[100];
+void int_compare(FILE *f){
+    char *name = (char*)malloc(100 * sizeof(char));
     int i = 0;
     char ch;
+ //   memset(name,'\0',strlen(name));
     while((ch = getch(f)) == ' ');
-    while((ch != ' ') && (ch != ';')){
+    while((ch != ' ') && (ch != ';') && (ch != EOF)){
      if(ch == '='); //equal_compare
+     if(ch == '{'){
+         brace_(f);
+         break;
+     }
      name[i] = ch;
      ch = getch(f);
      i++;
     }
-    printf("%s",name);
-    return name;
+    printf("%s\n",name);
+    return;
 }
 void letter_compare(char ch,FILE *f){
     switch (ch){
@@ -102,6 +112,18 @@ void letter_compare(char ch,FILE *f){
                 }
             else //variate_compare
             break;
+        case 'r':
+            if (getch(f) == 'e')
+                if (getch(f) == 't')
+                    if(getch(f) == 'u')
+                        if(getch(f) == 'r')
+                            if(getch(f) == 'n');
+                                //return_compare()
+            else;
+                //variate_compare
+            break;
+        default:
+            break;
     }
 }
 void lex_node(char ch,FILE *f) {
@@ -113,11 +135,12 @@ void lex_node(char ch,FILE *f) {
             break;
         case ' ':
             break;
-        default:
-            if (('a' < ch) || (ch < 'Z')) {
-               // printf("lettercompare");
+        case 'a' ... 'z':
                 letter_compare(ch, f);
-            }
+                break;
+        case '{':
+            brace_(f);
+            break;
     }
 }
 
