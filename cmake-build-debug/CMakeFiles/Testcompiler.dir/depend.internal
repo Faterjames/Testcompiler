@@ -4,7 +4,10 @@
 CMakeFiles/Testcompiler.dir/lex.c.o
  /home/ubuntu/programmes/Testcompiler/lex.c
  /home/ubuntu/programmes/Testcompiler/lex.h
+ /home/ubuntu/programmes/Testcompiler/node_type.h
+ /home/ubuntu/programmes/Testcompiler/using_struct.h
 CMakeFiles/Testcompiler.dir/mycompiler.c.o
  /home/ubuntu/programmes/Testcompiler/lex.h
  /home/ubuntu/programmes/Testcompiler/mycompiler.c
  /home/ubuntu/programmes/Testcompiler/node_type.h
+ /home/ubuntu/programmes/Testcompiler/using_struct.h

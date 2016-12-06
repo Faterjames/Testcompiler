@@ -3,6 +3,9 @@
 //
 
 #include <stdio.h>
+#include <stdbool.h>
+#include "using_struct.h"
+
 
 #ifndef TESTCOMPILER_LEX_H
 #define TESTCOMPILER_LEX_H
@@ -18,8 +21,10 @@
 #define isLBrace(ch)  ch == '{'
 #define isRBrace(ch)  ch == '}'
 
+
 char getch(FILE* f);
-void lex_node(char ch,FILE *f);
-void int_compare(FILE* f);
-void func_compare();
+struct _lex_node * lex_ch(char ch, FILE *f);
+struct _lex_node * int_compare(FILE* f);
+struct _lex_node * letter_compare(char ch, FILE *f);
+struct _lex_node * return_compare(FILE *f);
 #endif //TESTCOMPILER_LEX_H

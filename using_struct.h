@@ -22,4 +22,13 @@ struct AST_node{
     struct AST_node *right;
 
 };
+
+
+
+struct _lex_node{
+    char *name;
+    enum y_type type;
+    char value;
+};
+
 #endif //TESTCOMPILER_USING_STRUCT_H

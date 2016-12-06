@@ -21,6 +21,10 @@ stdbool.h
 /home/ubuntu/programmes/Testcompiler/lex.h
 stdio.h
 -
+stdbool.h
+-
+using_struct.h
+/home/ubuntu/programmes/Testcompiler/using_struct.h
 
 /home/ubuntu/programmes/Testcompiler/mycompiler.c
 stdio.h
@@ -34,5 +38,9 @@ lex.h
 node_type.h
 /home/ubuntu/programmes/Testcompiler/node_type.h
 
+/home/ubuntu/programmes/Testcompiler/node_type.h
+
+/home/ubuntu/programmes/Testcompiler/using_struct.h
+node_type.h
 /home/ubuntu/programmes/Testcompiler/node_type.h
 

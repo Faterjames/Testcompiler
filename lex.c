@@ -24,56 +24,32 @@ void Nobrant(char* ch,FILE *f){
     }
     else return;
 }
-void brace_(char * ch,FILE *f){
-    *ch = getch(f);
-    printf("in brace\n");
-    while (!(isRBrace(*ch))){
-        lex_node(*ch,f);
-        *ch = getch(f);
-    }
-    printf("out brace");
-    *ch = getch(f);
-}
+//used to ignore all brant
 
-void bracket_(char* ch,FILE *f){
-    *ch =getch(f);
-    printf("in bracket");
-    while(!(isRBracket(*ch))){
-        printf("%c",*ch);
-        lex_node(*ch,f);
-        *ch = getch(f);
-    }
-    printf("out bracket");
-    *ch = getch(f);
-}
-
-
-void int_compare(FILE *f){
-    bool isfunc = false;
+///////////////////////////////////////////////
+struct _lex_node *int_compare(FILE *f){
+    struct _lex_node *node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
     char *name = (char*)malloc(100 * sizeof(char));
     int16_t i = 0;
     char ch;
- //   memset(name,'\0',strlen(name));
     while((ch = getch(f)) == ' ');
     while(isAlphabet(ch) || (ch == '_')){
         name[i] = ch;
         i++;
         ch = getch(f);
     }
-    Nobrant(&ch,f);
-    if(isLBracket(ch)){
-        bracket_(&ch,f);
-    }
-    if(isLBrace(ch)){
-        brace_(&ch,f);
-    }
+    node->name = name;
+    node->type = y_int;
+    node->value = '0';
     printf("%s\n",name);
-    return;
+    return node;
 }
-
-void return_compare(FILE *f){
+//used to solve with int keyword
+/////////////////////////////////////////////////////////////////
+struct _lex_node *return_compare(FILE *f){
     char ch;
     char* name = (char*) malloc(100 * sizeof(char));
+    struct _lex_node *node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
     int16_t i = 0;
     while((ch = getch(f)) == ' ');
     while(isAlphabet(ch) || (ch == '_')){
@@ -81,9 +57,16 @@ void return_compare(FILE *f){
         ch = getch(f);
         i ++;
     }
+    node->name = name;
+    node->type = y_unkown;
+    node->value = '0';
     printf("%s\n",name);
+    return node;
 }
-void letter_compare(char ch,FILE *f){
+//used to solve return keyword
+///////////////////////////////////////////////////////
+struct _lex_node* letter_compare(char ch,FILE *f){
+    struct _lex_node* node;
     switch (ch){
        /* case 'a' :
             if(getch(f) == 'u')
@@ -148,7 +131,9 @@ void letter_compare(char ch,FILE *f){
         case 'i':
             if (getch(f) == 'n')
                 if(getch(f) == 't') {
-                    int_compare(f);
+                    node = int_compare(f);
+                    printf("%s",node->name);
+                    return node;
                 }
             else //variate_compare
             break;
@@ -159,7 +144,8 @@ void letter_compare(char ch,FILE *f){
                         if(getch(f) == 'r')
                             if(getch(f) == 'n') {
                                 printf("return");
-                                return_compare(f);
+                                node = return_compare(f);
+                                return node;
                             }
             else;
                 //variate_compare
@@ -167,8 +153,16 @@ void letter_compare(char ch,FILE *f){
         default:
             break;
     }
+    return NULL;
 }
-void lex_node(char ch,FILE *f) {
+//when get letter
+//////////////////////////////////////////////////////////////////////
+void number_compare(char ch,FILE *f){
+
+
+}
+struct _lex_node* lex_ch(char ch,FILE *f) {
+    struct _lex_node *lex_node;
     switch (ch) {
         case '=':
             //equal_symbol(ch);
@@ -178,11 +172,19 @@ void lex_node(char ch,FILE *f) {
         case ' ':
             break;
         case 'a' ... 'z':
-                letter_compare(ch, f);
-                break;
+            lex_node = letter_compare(ch, f);
+            if(lex_node != NULL) {
+                printf("%s", lex_node->name);
+                return lex_node;
+            }
+            break;
+        case '0' ... '9':
+            number_compare(ch,f);
+            break;
         case '{':
-            brace_(&ch,f);
+
             break;
     }
+    return NULL;
 }
 

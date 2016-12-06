@@ -13,6 +13,6 @@ int main(){
         exit(1);
     }
     char ch;
-    while((ch = getch(fp)) != EOF) lex_node(ch,fp);
+    while((ch = getch(fp)) != EOF) lex_ch(ch,fp);
 	return 0;
 }

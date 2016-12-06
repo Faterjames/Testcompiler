@@ -19,6 +19,7 @@ enum y_type{
     y_void,
     y_static,
     y_extern,
+    y_unkown,
 };
 enum y_st{
     y_while,

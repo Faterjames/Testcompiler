@@ -3,8 +3,11 @@
 
 CMakeFiles/Testcompiler.dir/lex.c.o: ../lex.c
 CMakeFiles/Testcompiler.dir/lex.c.o: ../lex.h
+CMakeFiles/Testcompiler.dir/lex.c.o: ../node_type.h
+CMakeFiles/Testcompiler.dir/lex.c.o: ../using_struct.h
 
 CMakeFiles/Testcompiler.dir/mycompiler.c.o: ../lex.h
 CMakeFiles/Testcompiler.dir/mycompiler.c.o: ../mycompiler.c
 CMakeFiles/Testcompiler.dir/mycompiler.c.o: ../node_type.h
+CMakeFiles/Testcompiler.dir/mycompiler.c.o: ../using_struct.h
 
