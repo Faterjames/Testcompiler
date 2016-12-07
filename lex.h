@@ -23,8 +23,8 @@
 
 
 char getch(FILE* f);
-struct _lex_node * lex_ch(char ch, FILE *f);
-struct _lex_node * int_compare(FILE* f);
-struct _lex_node * letter_compare(char ch, FILE *f);
-struct _lex_node * return_compare(FILE *f);
+struct _lex_node * lex_ch(char *ch, FILE *f);
+struct _lex_node * int_compare(FILE* f,char* ch);
+struct _lex_node * letter_compare(char* ch, FILE *f);
+struct _lex_node * return_compare(FILE *f,char* ch);
 #endif //TESTCOMPILER_LEX_H

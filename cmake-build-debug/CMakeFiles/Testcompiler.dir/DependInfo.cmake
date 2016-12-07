@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/ubuntu/programmes/Testcompiler/AST_build.c" "/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles/Testcompiler.dir/AST_build.c.o"
   "/home/ubuntu/programmes/Testcompiler/lex.c" "/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles/Testcompiler.dir/lex.c.o"
   "/home/ubuntu/programmes/Testcompiler/mycompiler.c" "/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles/Testcompiler.dir/mycompiler.c.o"
   )

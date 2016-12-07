@@ -123,6 +123,33 @@ Testcompiler/fast:
 	$(MAKE) -f CMakeFiles/Testcompiler.dir/build.make CMakeFiles/Testcompiler.dir/build
 .PHONY : Testcompiler/fast
 
+AST_build.o: AST_build.c.o
+
+.PHONY : AST_build.o
+
+# target to build an object file
+AST_build.c.o:
+	$(MAKE) -f CMakeFiles/Testcompiler.dir/build.make CMakeFiles/Testcompiler.dir/AST_build.c.o
+.PHONY : AST_build.c.o
+
+AST_build.i: AST_build.c.i
+
+.PHONY : AST_build.i
+
+# target to preprocess a source file
+AST_build.c.i:
+	$(MAKE) -f CMakeFiles/Testcompiler.dir/build.make CMakeFiles/Testcompiler.dir/AST_build.c.i
+.PHONY : AST_build.c.i
+
+AST_build.s: AST_build.c.s
+
+.PHONY : AST_build.s
+
+# target to generate assembly for a file
+AST_build.c.s:
+	$(MAKE) -f CMakeFiles/Testcompiler.dir/build.make CMakeFiles/Testcompiler.dir/AST_build.c.s
+.PHONY : AST_build.c.s
+
 lex.o: lex.c.o
 
 .PHONY : lex.o
@@ -186,6 +213,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Testcompiler"
+	@echo "... AST_build.o"
+	@echo "... AST_build.i"
+	@echo "... AST_build.s"
 	@echo "... lex.o"
 	@echo "... lex.i"
 	@echo "... lex.s"

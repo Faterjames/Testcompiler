@@ -12,7 +12,9 @@ int main(){
         printf("error to open file\n");
         exit(1);
     }
-    char ch;
-    while((ch = getch(fp)) != EOF) lex_ch(ch,fp);
+    char ch = getch(fp);
+    struct _lex_node* node = lex_ch(&ch,fp);
+    printf("%s,  %c",node->name,ch);
+    if(node->type == 101) printf("sss");
 	return 0;
 }

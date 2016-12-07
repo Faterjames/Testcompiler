@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/programmes/Testcompiler/cmake-build-debug
 CMakeFiles/Testcompiler.dir/all:
 	$(MAKE) -f CMakeFiles/Testcompiler.dir/build.make CMakeFiles/Testcompiler.dir/depend
 	$(MAKE) -f CMakeFiles/Testcompiler.dir/build.make CMakeFiles/Testcompiler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Testcompiler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target Testcompiler"
 .PHONY : CMakeFiles/Testcompiler.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/Testcompiler.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Testcompiler.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Testcompiler.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/programmes/Testcompiler/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Testcompiler.dir/rule

@@ -27,16 +27,15 @@ void Nobrant(char* ch,FILE *f){
 //used to ignore all brant
 
 ///////////////////////////////////////////////
-struct _lex_node *int_compare(FILE *f){
+struct _lex_node *int_compare(FILE *f,char* ch){
     struct _lex_node *node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
     char *name = (char*)malloc(100 * sizeof(char));
     int16_t i = 0;
-    char ch;
-    while((ch = getch(f)) == ' ');
-    while(isAlphabet(ch) || (ch == '_')){
-        name[i] = ch;
+    while((*ch = getch(f)) == ' ');
+    while(isAlphabet(*ch) || (*ch == '_')){
+        name[i] = *ch;
         i++;
-        ch = getch(f);
+        *ch = getch(f);
     }
     node->name = name;
     node->type = y_int;
@@ -46,15 +45,14 @@ struct _lex_node *int_compare(FILE *f){
 }
 //used to solve with int keyword
 /////////////////////////////////////////////////////////////////
-struct _lex_node *return_compare(FILE *f){
-    char ch;
+struct _lex_node *return_compare(FILE *f,char* ch){
     char* name = (char*) malloc(100 * sizeof(char));
     struct _lex_node *node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
     int16_t i = 0;
-    while((ch = getch(f)) == ' ');
-    while(isAlphabet(ch) || (ch == '_')){
-        name[i] = ch;
-        ch = getch(f);
+    while((*ch = getch(f)) == ' ');
+    while(isAlphabet(*ch) || (*ch == '_')){
+        name[i] = *ch;
+        *ch = getch(f);
         i ++;
     }
     node->name = name;
@@ -65,9 +63,9 @@ struct _lex_node *return_compare(FILE *f){
 }
 //used to solve return keyword
 ///////////////////////////////////////////////////////
-struct _lex_node* letter_compare(char ch,FILE *f){
+struct _lex_node* letter_compare(char* ch,FILE *f){
     struct _lex_node* node;
-    switch (ch){
+    switch (*ch){
        /* case 'a' :
             if(getch(f) == 'u')
                 if(getch(f) == 't')
@@ -131,7 +129,7 @@ struct _lex_node* letter_compare(char ch,FILE *f){
         case 'i':
             if (getch(f) == 'n')
                 if(getch(f) == 't') {
-                    node = int_compare(f);
+                    node = int_compare(f,ch);
                     printf("%s",node->name);
                     return node;
                 }
@@ -144,7 +142,7 @@ struct _lex_node* letter_compare(char ch,FILE *f){
                         if(getch(f) == 'r')
                             if(getch(f) == 'n') {
                                 printf("return");
-                                node = return_compare(f);
+                                node = return_compare(f,ch);
                                 return node;
                             }
             else;
@@ -157,13 +155,13 @@ struct _lex_node* letter_compare(char ch,FILE *f){
 }
 //when get letter
 //////////////////////////////////////////////////////////////////////
-void number_compare(char ch,FILE *f){
+void number_compare(char* ch,FILE *f){
 
 
 }
-struct _lex_node* lex_ch(char ch,FILE *f) {
+struct _lex_node* lex_ch(char* ch,FILE *f) {
     struct _lex_node *lex_node;
-    switch (ch) {
+    switch (*ch) {
         case '=':
             //equal_symbol(ch);
             break;
