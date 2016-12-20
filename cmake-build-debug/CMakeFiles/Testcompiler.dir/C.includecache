@@ -7,6 +7,16 @@
 #IncludeRegexTransform: 
 
 /home/ubuntu/programmes/Testcompiler/AST_build.c
+using_struct.h
+/home/ubuntu/programmes/Testcompiler/using_struct.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+lex.h
+/home/ubuntu/programmes/Testcompiler/lex.h
 
 /home/ubuntu/programmes/Testcompiler/lex.c
 lex.h
@@ -43,6 +53,8 @@ node_type.h
 /home/ubuntu/programmes/Testcompiler/node_type.h
 
 /home/ubuntu/programmes/Testcompiler/using_struct.h
+sys/param.h
+-
 node_type.h
 /home/ubuntu/programmes/Testcompiler/node_type.h
 

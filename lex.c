@@ -149,25 +149,49 @@ struct _lex_node* letter_compare(char* ch,FILE *f){
                 //variate_compare
             break;
         default:
+            *ch = getch(f);
             break;
     }
     return NULL;
 }
 //when get letter
 //////////////////////////////////////////////////////////////////////
-void number_compare(char* ch,FILE *f){
-
-
+struct _lex_node* number_compare(char* ch,FILE *f){
+    char num[8];
+    struct _lex_node* node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
+    int8_t i;
+    num[0] = *ch;
+    while((*ch = getch(f)) > '0' && (*ch < '9')){
+        num[++i] = *ch;
+    }
+    node->name = num;
+    node->type = y_num;
+    node->value = '0';
+    return node;
 }
 struct _lex_node* lex_ch(char* ch,FILE *f) {
     struct _lex_node *lex_node;
     switch (*ch) {
         case '=':
-            //equal_symbol(ch);
+            lex_node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
+            lex_node->name = "equal";
+            lex_node->type = y_equal;
+            lex_node->value = '0';
+            *ch = getch(f);
+            return lex_node;
             break;
         case ';':
-            break;
+            lex_node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
+            lex_node->name = "endSymbol";
+            lex_node->type = y_endsymbol;
+            lex_node->value = '0';
+            *ch = getch(f);
+            return lex_node;
         case ' ':
+            *ch = getch(f);
+            printf("kong");
+            lex_node = lex_ch(ch,f);
+            printf("kong");
             break;
         case 'a' ... 'z':
             lex_node = letter_compare(ch, f);
@@ -177,11 +201,44 @@ struct _lex_node* lex_ch(char* ch,FILE *f) {
             }
             break;
         case '0' ... '9':
-            number_compare(ch,f);
+            lex_node = number_compare(ch,f);
+            if(lex_node != NULL){
+                return lex_node;
+            }
             break;
         case '{':
-
+            lex_node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
+            lex_node->name = "Lbracce";
+            lex_node->type = y_Lbrace;
+            lex_node->value = '0';
+            *ch = getch(f);
+            return lex_node;
+        case '}':
+            printf("end");
+            lex_node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
+            lex_node->name = "Rbracce";
+            lex_node->type = y_Rbrace;
+            lex_node->value = '0';
+            *ch = getch(f);
+            return lex_node;
+        case '(':
+            lex_node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
+            lex_node->name = "Lbracket";
+            lex_node->type = y_Lbracket;
+            lex_node->value = '0';
+            *ch = getch(f);
+            return lex_node;
+        case ')':
+            lex_node = (struct _lex_node*)malloc(sizeof(struct _lex_node));
+            lex_node->name = "Rbracket";
+            lex_node->type = y_Rbracket;
+            lex_node->value = '0';
+            *ch = getch(f);
+            return lex_node;
+        case '\n':
+            *ch = getch(f);
             break;
+
     }
     return NULL;
 }

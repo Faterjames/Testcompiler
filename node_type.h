@@ -21,8 +21,6 @@ enum y_type{
     y_static = 1101,
     y_extern = 1110,
     y_unkown = 1111,
-};
-enum y_st{
     y_while,
     y_switch,
     y_case,
@@ -36,12 +34,18 @@ enum y_st{
     y_for,
     y_if,
     y_return,
-};
-enum y_def{
     y_struct,
     y_typedef,
     y_union,
     y_enum,
+    y_Lbrace,
+    y_Rbrace,
+    y_Lbracket,
+    y_Rbracket,
+    y_endsymbol,
+    y_equal,
+    y_plus,
+    y_milus
 };
 //stack node define
 

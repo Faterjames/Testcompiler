@@ -5,6 +5,7 @@
 #ifndef TESTCOMPILER_USING_STRUCT_H
 #define TESTCOMPILER_USING_STRUCT_H
 
+#include <sys/param.h>
 #include "node_type.h"
 struct variate_node{
     char *name;
@@ -15,15 +16,21 @@ struct value_node{
     char ch;
 };
 struct AST_node{
-    struct variate_node variate_node;
-    struct value_node value_node;
+    struct _lex_node *node;
 
     struct AST_node *left;
     struct AST_node *right;
 
 };
+struct Tree{
+    struct AST_node *headNode;
+    struct AST_node *pNode;
+};
 
-
+struct forest{
+    struct Tree forest[10];
+    int8_t whichTree;
+};
 
 struct _lex_node{
     char *name;

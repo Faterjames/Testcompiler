@@ -13,8 +13,14 @@ int main(){
         exit(1);
     }
     char ch = getch(fp);
-    struct _lex_node* node = lex_ch(&ch,fp);
-    printf("%s,  %c",node->name,ch);
-    if(node->type == 101) printf("sss");
+    struct _lex_node *node = lex_ch(&ch, fp);
+    printf("%s,  %c", node->name, ch);
+    node = lex_ch(&ch,fp);
+    printf("%s\n",node->name);
+    while(ch != EOF) {
+        node = lex_ch(&ch, fp);
+        if (node != NULL)
+            printf("%s\n", node->name);
+    }
 	return 0;
 }
